@@ -1,0 +1,65 @@
+@import 'mixin';
+@import 'variables';
+
+.wrapper {
+    max-width: 1440px;
+    width: 90%;
+    margin: 0 auto;
+
+    @include Flex(column, center, center);
+    @include responsive($sm-laptop) { width: 95%; }
+}
+
+p, .subtitle, h6 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8em;
+
+    @include responsive($sm-laptop) { font-size: 14px; }
+    @include responsive($tab) { font-size: 12px; }
+}
+
+a {
+    font-size: 16px;
+    font-weight: 400;
+                
+    @include responsive($sm-laptop) { font-size: 14px; }
+    @include responsive($tab) { font-size: 12px; }
+}
+
+.heading {  
+    padding-bottom: 0.6em;
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: capitalize;
+
+    @include responsive($sm-laptop) { font-size: 20px; }
+    @include responsive($tab) { font-size: 16px; }
+}
+
+.logo {
+    a { 
+        color: $black; 
+        font-size: 32px;
+        font-weight: 500; 
+        text-transform: uppercase;
+        @include responsive($sm-laptop) { font-size: 24px; }
+        @include responsive($tab) { font-size: 20px; }
+    }
+    
+}
+
+section { 
+    padding: 50px 0;
+
+    @include responsive($sm-laptop) { padding: 40px 0; }
+    @include responsive($tab) { padding: 30px 0; }
+}
+
+.bold { 
+    color: $black;
+    font-weight: 500; 
+}
+
+.bar { border-bottom: 5px solid $gray; }
+.underline { text-decoration: underline }
