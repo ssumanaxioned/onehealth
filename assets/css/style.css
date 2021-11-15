@@ -362,6 +362,45 @@ nav {
     .menu .line:last-child {
       margin-top: 5px; }
 
+.banner {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: url(https://images.pexels.com/photos/4916259/pexels-photo-4916259.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff; }
+  .banner::after {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    content: "";
+    z-index: 1; }
+  .banner * {
+    z-index: 2; }
+  .banner .wrapper p {
+    letter-spacing: 3px;
+    text-transform: uppercase; }
+
+.banner-title {
+  margin-bottom: 1em;
+  font-size: 42px;
+  font-weight: 500; }
+  @media (max-width: 995px) {
+    .banner-title {
+      font-size: 36px; } }
+  @media (max-width: 768px) {
+    .banner-title {
+      font-size: 28px; } }
+
 .doctor-content {
   width: 100%;
   margin-top: 30px;
