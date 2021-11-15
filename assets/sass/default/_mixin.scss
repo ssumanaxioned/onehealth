@@ -11,9 +11,7 @@
   #{$property}: $value;
 }
 
-@mixin icon($type, $loc) {
-  display: block;
-
+@mixin icons($type, $loc) {
   &::#{$loc} {
     font-family: "Font Awesome 5 #{$type}";
     font-weight: 900;

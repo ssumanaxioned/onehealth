@@ -1,0 +1,19 @@
+.contact-info {
+  padding: 1em 0;
+  border-bottom: 1px solid $gray;
+
+  .wrapper { 
+    @include flex(row, space-between, center); 
+
+    @include responsive(max, $mobile) {
+      @include flex(column, center, center);
+    }
+  }
+}
+
+.social-top { 
+  @include flex(row, space-between, center);
+  gap: 2em;
+
+  @include responsive(max, $mobile) { margin-top: 1em; }
+}

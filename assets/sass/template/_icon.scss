@@ -1,0 +1,48 @@
+.info-icon {
+  color: $gray; 
+
+  @include icons(Free, before) {
+    padding-right: .5em;
+    color: $green;
+  }
+
+  &:hover {  
+    @include responsive(min, $sm-laptop) { color: $green; }
+  }
+}
+
+.call {
+  padding-right: 1em;
+  &::before { content: "\f879"; }
+}
+
+.mail {
+  padding-left: 1em;
+  border-left: 1px solid $gray;
+  &:before { content: "\f0e0"; }
+}
+
+.social {
+  @include icons(Brands, before) {
+    position: absolute;
+    left: 0;
+  }
+
+  display: block;
+  position: relative;
+  color: $gray;
+  text-indent: -9999px;
+
+  &:hover {  
+    @include responsive(min, $sm-laptop) { color: $green; }
+  }
+}
+
+.facebook::before { content: "\f39e"; }
+.twitter::before { content: "\f099"; }
+.instagram::before { content: "\f16d"; }
+
+.ball::before { 
+  font-family: "Font Awesome 5 Free";
+  content: "\f434";
+}
