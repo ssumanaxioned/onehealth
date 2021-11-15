@@ -12,8 +12,8 @@
 }
 
 .social-top { 
-  @include flex(row, space-between, center);
-  gap: 2em;
+  margin-right: -1em;
 
+  @include flex(row, space-between, center);
   @include responsive(max, $mobile) { margin-top: 1em; }
 }

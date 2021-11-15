@@ -1,0 +1,75 @@
+header { 
+  padding: 1em 0;
+  
+  .wrapper { @include flex(row, space-between, center); }
+}
+
+.logo { flex-basis: 15%; }
+
+.search-ctn { 
+  flex-basis: 20%; 
+  border: 1px solid $gray;
+  border-radius: 3px;
+  margin-left: -3em;
+  @include flex(row, flex-start, center); 
+  
+  input { 
+    flex-basis: 50%;
+    display: block; 
+    padding: .5em;
+    border: none;
+    border-left: 1px solid $gray;
+    outline: none;
+  }
+}
+
+.search { 
+  @include icons(Free, before) {
+    padding: 0 .5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "\f002";
+    font-size: 14px;
+  }
+  flex-basis: 15%;
+  display: block;
+  position: relative;
+  color: $green;
+  text-indent: -9999px; 
+}
+
+nav { 
+  flex-basis: 65%; 
+  
+  ul {
+    width: 100%;
+    @include flex(row, flex-end, center);
+
+    @include responsive(max, $tab) {
+      width: 100%;
+      padding: 2em 0;
+      @include flex(column, center, center);
+      position: fixed;
+      top: 40px;
+      left: 0;
+      background-color: $black;
+
+      @include prefix(transform, translateX(200%));
+      @include prefix(transition, all .3s ease-in-out);
+  }
+
+    li {
+      margin-left: 1.5em;
+
+      a {
+        color: $gray;
+
+        &:hover { @include responsive(min, $sm-laptop) { color: $green; } }
+      }
+    }
+
+
+  }
+}
