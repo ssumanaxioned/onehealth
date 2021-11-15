@@ -173,4 +173,39 @@ section {
 .underline {
   text-decoration: underline; }
 
+.menu {
+  display: none;
+  position: absolute;
+  right: 0; }
+  @media (max-width: 768px) {
+    .menu {
+      display: block; } }
+  .menu:hover ~ nav ul {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0); }
+  .menu:hover .line:nth-child(2) {
+    opacity: 0; }
+  .menu:hover .line:nth-child(1) {
+    -webkit-transform: translateY(8px) rotate(45deg);
+    -ms-transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg); }
+  .menu:hover .line:nth-child(3) {
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+    -ms-transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg); }
+  .menu .line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    text-indent: -9999px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .menu .line:first-child {
+      margin-bottom: 5px; }
+    .menu .line:last-child {
+      margin-top: 5px; }
+
 /*# sourceMappingURL=style.css.map */
