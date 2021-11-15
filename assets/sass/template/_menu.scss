@@ -5,10 +5,13 @@
 
   @include responsive(max, $tab) { display: block; }
 
-  &:hover .line:nth-child(2) { opacity: 0; }
-  &:hover .line:nth-child(1) { @include prefix(transform, translateY(8px) rotate(45deg)); }
-  &:hover .line:nth-child(3) { @include prefix(transform, translateY(-8px) rotate(-45deg)); }
-  &:hover ~ nav ul { @include prefix(transform, translateX(0)); }
+  &:hover {
+    .line:nth-child(2) { opacity: 0; }
+    .line:nth-child(1) { @include prefix(transform, translateY(8px) rotate(45deg)); }
+    .line:nth-child(3) { @include prefix(transform, translateY(-8px) rotate(-45deg)); }
+    
+    ~ nav ul { @include prefix(transform, translateX(0)); }
+  }
 
   .line {
     display: block;
