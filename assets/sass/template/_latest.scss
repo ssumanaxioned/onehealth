@@ -1,0 +1,73 @@
+.latest-content {
+  padding: 40px 0 20px 0;
+
+  @include flex(row, space-around, center);
+
+  @include responsive(max, $sm-laptop) {
+    @include flex(row, space-between, center);
+  }
+
+  @include responsive(max, $mobile) {
+    @include flex(column, center, center);
+  } 
+
+  li {
+    flex-basis: 25%;
+    position: relative;
+
+    @include responsive(max, $laptop) { flex-basis: 30%; }
+    @include responsive(max, $mobile) { width: 100%; }
+
+    img { width: 100%; }
+  }
+}
+
+.latest-info {
+  padding: 1em .5em;
+  @include prefix(box-shadow, 0px 5px 10px -5px rgba(0,0,0,0.75));
+  background: $white;
+
+  @include responsive(max, $mobile) { margin-bottom: 1em; }
+
+  p { margin-bottom: 1em; }
+
+  .info {
+    width: 100%;
+    @include flex(row, flex-start, center);
+    color: $gray;
+
+    img {
+      width: 10%;
+      border-radius: 50%;
+    }
+
+    .subhead { margin-left: .5em; }
+  }
+}
+
+.covid {
+  padding: 5px;
+  border-radius: 50px;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  color: white;
+  background: $blue;
+}
+
+.icon-clock {
+  @include icons(Free, before) {
+    padding-right: .5em;
+    content: "\f017";
+  }
+
+  margin-left: .5em;
+}
+
+.icon-clock, .covid, .subhead {
+  font-size: 14px;
+  font-weight: 400;
+                
+  @include responsive(max, $sm-laptop) { font-size: 12px; }
+  @include responsive(max, $tab) { font-size: 10px; }
+}

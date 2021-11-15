@@ -2,29 +2,27 @@
 @import 'variables';
 
 .wrapper {
-    max-width: 1440px;
-    width: 90%;
-    margin: 0 auto;
-
-    @include flex(column, center, center);
-    @include responsive(max, $sm-laptop) { width: 95%; }
+  max-width: 1440px;
+  width: 90%;
+  margin: 0 auto;
+  @include flex(column, center, center);
+  @include responsive(max, $sm-laptop) { width: 95%; }
 }
 
-p, .subhead {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.8em;
-
-    @include responsive(max, $sm-laptop) { font-size: 14px; }
-    @include responsive(max, $tab) { font-size: 12px; }
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8em;
+  @include responsive(max, $sm-laptop) { font-size: 14px; }
+  @include responsive(max, $tab) { font-size: 12px; }
 }
 
 a {
-    font-size: 16px;
-    font-weight: 400;
-                
-    @include responsive(max, $sm-laptop) { font-size: 14px; }
-    @include responsive(max, $tab) { font-size: 12px; }
+  font-size: 16px;
+  font-weight: 400;
+              
+  @include responsive(max, $sm-laptop) { font-size: 14px; }
+  @include responsive(max, $tab) { font-size: 12px; }
 }
 
 .title {  
@@ -39,6 +37,7 @@ a {
 .heading {  
   font-size: 20px;
   font-weight: 500;
+  line-height: 1em;
 
   @include responsive(max, $sm-laptop) { font-size: 17px; }
   @include responsive(max, $tab) { font-size: 15px; }

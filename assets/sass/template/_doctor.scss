@@ -21,14 +21,13 @@
 
     .heading { 
       display: block;
-      margin-top: 1em;
+      margin: 1em;
       margin-left: .5em; 
     }
 
     .subhead {
       display: block;
-      margin-bottom: 1em;
-      margin-left: .5em;
+      margin: 1em .5em;
       color: $gray;
     }
   }

@@ -1,10 +1,17 @@
 header { 
   padding: 1em 0;
-  
-  .wrapper { @include flex(row, space-between, center); }
+
+  .wrapper { 
+    @include flex(row, space-between, center); 
+    position: relative;
+  }
 }
 
-.logo { flex-basis: 15%; }
+.logo { 
+  flex-basis: 15%;
+  
+  @include responsive(max, $tab) { flex-basis: 50%; }
+}
 
 .search-ctn { 
   flex-basis: 20%; 
@@ -12,6 +19,13 @@ header {
   border-radius: 3px;
   margin-left: -3em;
   @include flex(row, flex-start, center); 
+
+  @include responsive(max, $laptop) { 
+    flex-basis: 22%;
+    margin-left: -1em;
+  }
+
+  @include responsive(max, $sm-laptop) { display: none; }
   
   input { 
     flex-basis: 50%;
@@ -42,6 +56,9 @@ header {
 
 nav { 
   flex-basis: 65%; 
+  z-index: 10;
+
+  @include responsive(max, $laptop) { flex-basis: 63%; }
   
   ul {
     width: 100%;
@@ -52,7 +69,7 @@ nav {
       padding: 2em 0;
       @include flex(column, center, center);
       position: fixed;
-      top: 40px;
+      top: 20%;
       left: 0;
       background-color: $black;
 
@@ -62,6 +79,8 @@ nav {
 
     li {
       margin-left: 1.5em;
+
+      @include responsive(max, $tab) { margin-bottom: 1em; }
 
       a {
         color: $gray;
