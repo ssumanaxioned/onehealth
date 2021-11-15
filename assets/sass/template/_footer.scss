@@ -1,0 +1,90 @@
+footer {
+  position: relative;
+  background: $darkgray;
+  color: white;
+
+   .wrapper { padding: 20px 0; }
+}
+
+.footer-content {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  @include flex(row, space-between, flex-start);
+
+  @include responsive(max, $mobile) {
+    @include flex(column, flex-start, flex-start);
+  }
+
+  li {
+    .heading { 
+      margin-bottom: 1em; 
+      display: block;
+    }
+
+    a {
+      margin-bottom: 1em;
+      display: block;
+      color: $gray;
+
+      &:hover {
+        @include responsive(min, $sm-laptop) { color: $green; }
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  width: 100%;
+  padding-top: 1em;
+  border-top: 1px solid $gray;
+}
+
+.social-ctn {
+ .social {
+   width: 2em;
+   height: 2em;
+   border-radius: 50%;
+   margin-right: .5em;
+   position: relative;
+   background: darken($darkgray, 10%);
+
+   &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include prefix(transform, translate(-50%, -50%));
+   }
+ } 
+}
+
+.google::before { content: "\f0d5"; }
+.linkedin::before { content: "\f08c"; }
+
+.back {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+}
+
+.arrow-up {
+  @include icons(Free, before){
+    content: "\f077";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include prefix(transform, translate(-50%, -50%));
+  }
+
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  display: block;
+  background: $gray;
+  color: $darkgray;
+  text-indent: -9999px;
+
+  &:hover { 
+    @include responsive(min, $sm-laptop) { background: $green; }  
+  }
+}
