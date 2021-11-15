@@ -1,0 +1,68 @@
+form {
+  width: 60%;
+  margin-top: 30px;
+
+  @include responsive(max, $sm-laptop) { width: 70%; }
+  @include responsive(max, $tab) { width: 80%; }
+  @include responsive(max, $mobile) { width: 90%; }
+
+}
+
+.form-ctn {
+  width: 100%;
+
+  li {
+    width: 100%;
+
+    @include flex(row, space-between, center);
+
+    @include responsive(max, $mobile) {
+      @include flex(column, center, center);
+    }
+
+    input { 
+      width: 45%;
+      padding: .5em;
+      border: 1px solid $gray;
+      border-radius: 3px;
+      outline: 1px solid transparent;
+      margin-bottom: 1em;
+      display: block;
+
+      @include responsive(max, $mobile)  { width: 100%; }
+      &:hover { border-color: $green; }
+      &:focus { outline-color: $green; }
+    }
+
+    select {
+      width: 47%;
+      padding: .5em;
+      border: 1px solid $gray;
+      border-radius: 3px;
+      outline: 1px solid transparent;
+      margin-bottom: 1em;
+      display: block;
+      background: $white;
+      @include responsive(max, $mobile)  { width: 103%; }
+
+      &:hover { border-color: $green; }
+      &:focus { outline-color: $green; }
+    }
+
+    &:nth-child(3) { input { width: 100%; } }
+    
+    &:nth-child(4) { 
+      textarea { 
+        width: 100%; 
+        padding: .5em;
+        border: 1px solid $gray;
+        border-radius: 3px;
+        outline: 1px solid transparent;
+        display: block;
+
+        &:hover { border-color: $green; }
+        &:focus { outline-color: $green; }
+      } 
+    }
+  }
+}
