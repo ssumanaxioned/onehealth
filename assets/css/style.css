@@ -406,10 +406,17 @@ nav {
 
 .about-content {
   width: 100%;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center; }
+  @media (max-width: 550px) {
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; } }
   .about-content img {
     flex-basis: 30%; }
 
@@ -420,16 +427,39 @@ nav {
 
 .about-top {
   width: 100%;
+  margin-top: -80px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 3; }
+  @media (max-width: 550px) {
+    .about-top {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 1em; } }
   .about-top li {
+    padding: 1em;
     flex-basis: 20%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    background: #fff; }
+    @media (max-width: 995px) {
+      .about-top li {
+        flex-basis: 25%; } }
+    @media (max-width: 550px) {
+      .about-top li {
+        flex-basis: 30%; } }
+    .about-top li img {
+      flex-basis: 30%;
+      border-radius: 50%; }
+    .about-top li p {
+      flex-basis: 60%; }
 
 .doctor-content {
   width: 100%;
@@ -539,8 +569,8 @@ form {
       padding: .5em;
       border: 1px solid #a1aaa7;
       border-radius: 3px;
-      outline: 1px solid transparent;
       margin-bottom: 1em;
+      outline: 1px solid transparent;
       display: block; }
       @media (max-width: 550px) {
         .form-ctn li input {
@@ -554,8 +584,8 @@ form {
       padding: .5em;
       border: 1px solid #a1aaa7;
       border-radius: 3px;
-      outline: 1px solid transparent;
       margin-bottom: 1em;
+      outline: 1px solid transparent;
       display: block;
       background: #fff; }
       @media (max-width: 550px) {
@@ -572,6 +602,7 @@ form {
       padding: .5em;
       border: 1px solid #a1aaa7;
       border-radius: 3px;
+      margin-bottom: 1em;
       outline: 1px solid transparent;
       display: block; }
       .form-ctn li:nth-child(4) textarea:hover {

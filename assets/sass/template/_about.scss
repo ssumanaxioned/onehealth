@@ -2,7 +2,10 @@
 
 .about-content {
   width: 100%;
+  margin-top: 20px;
+  
   @include flex(row, space-between, center);
+  @include responsive(max, $mobile) {  @include flex(column, center, center); }
 
   img { flex-basis: 30%; }
 }
@@ -15,10 +18,32 @@
 
 .about-top {
   width: 100%;
+  margin-top: -80px;
   @include flex(row, space-between, center);
+  flex-wrap: wrap;
+  z-index: 3;
+
+  @include responsive(max, $mobile) { 
+    @include flex(row, center, center); 
+    gap: 1em;
+  }
 
   li {
+    padding: 1em;
     flex-basis: 20%;
     @include flex(row, space-between, center);
+    background: $white;
+
+    @include responsive(max, $sm-laptop) { flex-basis: 25%; }
+    @include responsive(max, $mobile) { flex-basis: 30%; }
+
+    img {
+      flex-basis: 30%;
+      border-radius: 50%;
+    }
+
+    p {
+      flex-basis: 60%;
+    }
   }
 }
