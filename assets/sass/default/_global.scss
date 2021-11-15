@@ -6,60 +6,79 @@
     width: 90%;
     margin: 0 auto;
 
-    @include Flex(column, center, center);
-    @include responsive($sm-laptop) { width: 95%; }
+    @include flex(column, center, center);
+    @include responsive(max, $sm-laptop) { width: 95%; }
 }
 
-p, .subtitle, h6 {
+p, .subhead {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.8em;
 
-    @include responsive($sm-laptop) { font-size: 14px; }
-    @include responsive($tab) { font-size: 12px; }
+    @include responsive(max, $sm-laptop) { font-size: 14px; }
+    @include responsive(max, $tab) { font-size: 12px; }
 }
 
 a {
     font-size: 16px;
     font-weight: 400;
                 
-    @include responsive($sm-laptop) { font-size: 14px; }
-    @include responsive($tab) { font-size: 12px; }
+    @include responsive(max, $sm-laptop) { font-size: 14px; }
+    @include responsive(max, $tab) { font-size: 12px; }
+}
+
+.title {  
+  padding-bottom: 0.6em;
+  font-size: 28px;
+  font-weight: 500;
+  text-transform: capitalize;
+  
+  @include responsive(max, $sm-laptop) { font-size: 24px; }
+  @include responsive(max, $tab) { font-size: 20px; }
 }
 
 .heading {  
-    padding-bottom: 0.6em;
-    font-size: 24px;
-    font-weight: 500;
-    text-transform: capitalize;
+  padding-bottom: 0.6em;
+  font-size: 24px;
+  font-weight: 500;
 
-    @include responsive($sm-laptop) { font-size: 20px; }
-    @include responsive($tab) { font-size: 16px; }
+  @include responsive(max, $sm-laptop) { font-size: 20px; }
+  @include responsive(max, $tab) { font-size: 16px; }
 }
 
 .logo {
-    a { 
-        color: $black; 
-        font-size: 32px;
-        font-weight: 500; 
-        text-transform: uppercase;
-        @include responsive($sm-laptop) { font-size: 24px; }
-        @include responsive($tab) { font-size: 20px; }
-    }
+  a {     
+      color: $black; 
+      font-size: 20px;
+      font-weight: 500; 
+      text-transform: uppercase;
+      
+      @include responsive(max, $sm-laptop) { font-size: 18px; }
+      @include responsive(max, $tab) { font-size: 16px; }
+  }
     
 }
 
 section { 
-    padding: 50px 0;
+  padding: 50px 0;
 
-    @include responsive($sm-laptop) { padding: 40px 0; }
-    @include responsive($tab) { padding: 30px 0; }
+  &:nth-child(even) { background-color: $lightgray; }
+
+  @include responsive(max, $sm-laptop) { padding: 40px 0; }
+  @include responsive(max, $tab) { padding: 30px 0; }
 }
 
-.bold { 
-    color: $black;
-    font-weight: 500; 
+.button {
+  padding: .8em 1.5em;
+  border: none;
+  border-radius: 5px;
+  background-color: $green;
+  color: $white;
+  text-transform: capitalize;
+
+  &:hover {
+    @include responsive(min, $sm-laptop) { background-color: darken($green, 20%); }
+  }
 }
 
-.bar { border-bottom: 5px solid $gray; }
-.underline { text-decoration: underline }
+.highlight { color: $green; }

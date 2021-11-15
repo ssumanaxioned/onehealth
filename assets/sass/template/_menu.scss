@@ -1,21 +1,24 @@
 .menu { 
-    display: none;
-    position: absolute;
-    right: 0;
-    @include responsive($tab) { display: block; }
-    &:hover ~ nav ul { @include prefix(transform, translateX(0)); }
-    &:hover .line:nth-child(2) { opacity: 0; }
-    &:hover .line:nth-child(1) { @include prefix(transform, translateY(8px) rotate(45deg)); }
-    &:hover .line:nth-child(3) { @include prefix(transform, translateY(-8px) rotate(-45deg)); }
+  display: none;
+  position: absolute;
+  right: 0;
 
-    .line {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: white;
-        text-indent: -9999px;
-        &:first-child { margin-bottom: 5px;}
-        &:last-child { margin-top: 5px; }
-        @include prefix(transition, all .3s ease-in-out);
-    } 
-}
+  @include responsive(max, $tab) { display: block; }
+
+  &:hover .line:nth-child(2) { opacity: 0; }
+  &:hover .line:nth-child(1) { @include prefix(transform, translateY(8px) rotate(45deg)); }
+  &:hover .line:nth-child(3) { @include prefix(transform, translateY(-8px) rotate(-45deg)); }
+  &:hover ~ nav ul { @include prefix(transform, translateX(0)); }
+
+  .line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: $green;
+    text-indent: -9999px;
+    
+    &:first-child { margin-bottom: 5px;}
+    &:last-child { margin-top: 5px; }
+    @include prefix(transition, all .3s ease-in-out);
+  } 
+}              
